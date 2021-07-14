@@ -1,0 +1,25 @@
+.bg-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f172a;
+  color: white;
+  padding: 10px;
+}
+.col {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.tastyheading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-cont {
+  display: flex;
+  font-size: 30px;
+  margin-bottom: 10px;
+}

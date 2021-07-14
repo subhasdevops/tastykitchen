@@ -1,0 +1,44 @@
+.card-container {
+  background-color: #333333;
+  height: 50vh;
+  width: 100vw;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.image-card {
+  width: 250px;
+  height: 200px;
+}
+.foodItem-cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.card-details {
+  padding: 10px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.card-heading {
+  font-size: 20px;
+}
+
+.card-subHeading {
+  font-size: 10px;
+}
+.card-rating {
+  display: flex;
+}
+
+.rating {
+}

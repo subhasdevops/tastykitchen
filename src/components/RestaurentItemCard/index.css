@@ -1,0 +1,36 @@
+.dish-container {
+  display: flex;
+  min-width: 300px;
+  max-width: 340px;
+
+  margin: 10px;
+}
+.dish-img {
+  width: 150px;
+  height: 100px;
+  border-radius: 5px;
+}
+.foodName-card {
+  font-size: 12px;
+  font-weight: bold;
+}
+.food-rating {
+  font-size: 9px;
+  margin-left: 5px;
+}
+.button-el {
+  background-color: white;
+  color: #ffa412;
+  border: 1px solid #ffa412;
+  border-radius: 5px;
+}
+.color {
+  color: #ffcc00;
+  height: 10px;
+}
+
+.cost-card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
