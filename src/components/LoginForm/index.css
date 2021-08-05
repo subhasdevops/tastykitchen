@@ -1,18 +1,35 @@
 .login-form-container {
   display: flex;
-
+  align-items: center;
+  justify-content: center;
   height: 100vh;
 }
 .login-website-logo-mobile-image {
   width: 50vw;
 }
+@media screen and (max-width: 576px) {
+  .login-website-logo-mobile-image {
+    display: none;
+  }
+  .login-website-logo-desktop-image {
+    display: none;
+  }
+  .font-color {
+    display: none;
+  }
+}
+@media screen and (min-width: 576px) {
+  .kitchen-mobile-image {
+    display: none;
+  }
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 50vw;
-  box-shadow: 5px white;
 }
 .input-container {
   width: 200px;

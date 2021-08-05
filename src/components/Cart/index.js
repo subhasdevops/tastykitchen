@@ -41,13 +41,9 @@ const Cart = () => {
       <>
         <Header />
         <div className="backGround-container">
-          <div className="menu-card">
+          <div className="item-cardMenu">
             <h1>Item</h1>
-            <h1 className="heading_el">Quantity</h1>
-            <h1>price</h1>
-          </div>
-          <div className="Food_card-menu">
-            <div className="Food_card">
+            <div className="item_card">
               <img
                 className="img-card"
                 src={parsedFoodItem.imageUrl}
@@ -55,21 +51,27 @@ const Cart = () => {
               />
               <p>{parsedFoodItem.name}</p>
             </div>
-            <p className="heading_el1">{getCountValue}</p>
-            <p>{price}</p>
           </div>
-          <hr className="rule" />
-          <div className="total-card">
-            <p className="heading_el">Order total:</p>
-            <p>{price}</p>
+          <div className="quantityCard">
+            <h1 className="heading_el">Quantity</h1>
+            <p>{getCountValue}</p>
           </div>
-          <div className="confirm-card">
-            <Link to="/cart/payment-success">
-              <button type="button" className="confirm-order">
-                Confirm Order
-              </button>
-            </Link>
+          <div className="price_cardMenu">
+            <h1>price</h1>
+            <h1>{price}</h1>
           </div>
+        </div>
+        <hr className="rule" />
+        <div className="total-card">
+          <p className="heading_el">Order total:</p>
+          <p>{price}</p>
+        </div>
+        <div className="confirm-card">
+          <Link to="/cart/payment-success">
+            <button type="button" className="confirm-order">
+              Confirm Order
+            </button>
+          </Link>
         </div>
         <Footer />
       </>

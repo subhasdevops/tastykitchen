@@ -21,7 +21,7 @@
 .foodItem-cont {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .card-details {
   padding: 10px;
