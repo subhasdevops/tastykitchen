@@ -8,11 +8,11 @@ import './index.css'
 
 const sortByOptions = [
   {
-    optionId: 'HIGH',
+    optionId: 'Highest',
     displayText: 'Highest',
   },
   {
-    optionId: 'LOW',
+    optionId: 'Lowest',
     displayText: 'Lowest',
   },
 ]
@@ -50,7 +50,7 @@ class AllProductsSection extends Component {
     })
     const jwtToken = Cookies.get('jwt_token')
     const {activeOptionId} = this.state
-    const apiUrl = `https://apis.ccbp.in/restaurants-list?${offset}&limit=9&sort_by_rating=${activeOptionId}`
+    const apiUrl = `https://apis.ccbp.in/restaurants-list?offset=${offset}&limit=9&sort_by_rating=${activeOptionId}`
     const options = {
       headers: {
         Authorization: `Bearer ${jwtToken}`,
