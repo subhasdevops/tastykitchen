@@ -23,6 +23,7 @@ class AllProductsSection extends Component {
     productsList: [],
     isLoading: false,
     activeOptionId: sortByOptions[1].optionId,
+    page: 1,
   }
 
   componentDidMount() {
@@ -30,21 +31,27 @@ class AllProductsSection extends Component {
   }
 
   onIncrease = () => {
-    this.setState(prev => ({offset: prev.offset + 9}), this.getProducts)
+    this.setState(
+      prev => ({offset: prev.offset + 9, page: prev.page + 1}),
+      this.getProducts,
+    )
   }
 
   onDecrease = () => {
     const {offset} = this.state
     if (offset <= 0) {
-      this.setState({offset: 0}, this.getProducts)
+      this.setState({offset: 0, page: 1}, this.getProducts)
     } else {
-      this.setState(prev => ({offset: prev.offset - 9}), this.getProducts)
+      this.setState(
+        prev => ({offset: prev.offset - 9, page: prev.page - 1}),
+        this.getProducts,
+      )
     }
   }
 
   getProducts = async () => {
     const {offset} = this.state
-    console.log(offset)
+
     this.setState({
       isLoading: true,
     })
@@ -88,7 +95,7 @@ class AllProductsSection extends Component {
   }
 
   renderProductsList = () => {
-    const {productsList, activeOptionId} = this.state
+    const {productsList, activeOptionId, page} = this.state
     return (
       <>
         <ProductsHeader
@@ -107,14 +114,18 @@ class AllProductsSection extends Component {
             type="button"
             onClick={this.onDecrease}
             className="icon-button"
+            testid="pagination-left-button"
           >
             <AiOutlineLeftSquare size={30} />
           </button>
-          <p>1 of 20</p>
+          <p>
+            <span testid="active-page-number">{page}</span> of 4
+          </p>
           <button
             type="button"
             onClick={this.onIncrease}
             className="icon-button"
+            testid="pagination-right-button"
           >
             <AiOutlineRightSquare size={30} />
           </button>
@@ -124,8 +135,11 @@ class AllProductsSection extends Component {
   }
 
   renderLoader = () => (
-    <div className="products-loader-container">
-      <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
+    <div
+      className="products-loader-container"
+      testid="restaurants-offers-loader"
+    >
+      <Loader type="Oval" color="#f7931e" height="80" width="50" />
     </div>
   )
 

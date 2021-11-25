@@ -7,9 +7,17 @@ import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import './index.css'
 import Header from '../Header'
 import RestaurentItem from '../RestaurentItemCard'
+import Footer from '../Footer'
 
+const getStoredData = JSON.parse(localStorage.getItem('cartData'))
+const dataSet =
+  getStoredData !== [] ? JSON.parse(localStorage.getItem('cartData')) : []
 class RestaurentDetails extends Component {
-  state = {blogData: {}, isLoading: true}
+  state = {
+    blogData: {},
+    productData: dataSet,
+    isLoading: true,
+  }
 
   componentDidMount() {
     this.getBlogItemData()
@@ -29,7 +37,6 @@ class RestaurentDetails extends Component {
     }
     const response = await fetch(apiUrl, options)
     const data = await response.json()
-    console.log(data)
 
     const fetchedData = {
       costForTwo: data.cost_for_two,
@@ -45,6 +52,12 @@ class RestaurentDetails extends Component {
       reviewsCount: data.reviews_count,
     }
     this.setState({blogData: fetchedData, isLoading: false})
+  }
+
+  prdData = item => {
+    this.setState(prev => ({
+      productData: [...prev.productData, item],
+    }))
   }
 
   renderBlogItemDetails = () => {
@@ -64,7 +77,7 @@ class RestaurentDetails extends Component {
         <Header />
         <div className="card-container">
           <div>
-            <img className="image-card" src={imageUrl} alt={name} />
+            <img className="image-card" src={imageUrl} alt="restaurant" />
           </div>
           <div className="card-details card-subHeading">
             <h1 className="card-heading">{name}</h1>
@@ -91,20 +104,32 @@ class RestaurentDetails extends Component {
         </div>
         <ul className="foodItem-cont">
           {foodItems.map(each => (
-            <RestaurentItem foodItem={each} key={each.id} />
+            <RestaurentItem
+              foodItem={each}
+              key={each.id}
+              prdData={this.prdData}
+            />
           ))}
         </ul>
+        <Footer />
       </>
     )
   }
 
   render() {
-    const {isLoading} = this.state
+    const {isLoading, productData} = this.state
 
+    localStorage.setItem('cartData', JSON.stringify(productData))
     return (
       <div className="blog-container">
         {isLoading ? (
-          <Loader type="TailSpin" color="#00BFFF" height={50} width={50} />
+          <Loader
+            className="products-loader-container"
+            type="TailSpin"
+            color="#f7931e"
+            height={50}
+            width={50}
+          />
         ) : (
           this.renderBlogItemDetails()
         )}

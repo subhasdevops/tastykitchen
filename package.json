@@ -18,7 +18,8 @@
     "react-loader-spinner": "4.0.0",
     "react-router-dom": "5.2.0",
     "react-slick": "0.28.1",
-    "slick-carousel": "1.8.1"
+    "slick-carousel": "1.8.1",
+    "uuid": "8.3.2"
   },
   "devDependencies": {
     "eslint-config-airbnb": "18.2.1",

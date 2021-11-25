@@ -3,11 +3,21 @@
   justify-content: space-around;
   align-items: center;
 }
+@media screen and (max-width: 576px) {
+  .products-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+  }
+}
 .sort-by-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .sort-by {
   font-size: 20px;
   margin-right: 5px;

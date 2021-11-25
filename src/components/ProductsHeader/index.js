@@ -13,12 +13,13 @@ const ProductsHeader = props => {
       <div>
         <h1 className="products-list-heading">Popular Restaurants</h1>
         <p className="sub-heading">
-          Select your favourite restaurant special dish and make your day happy
+          Select Your favourite restaurant special dish and make your day
+          happy...
         </p>
       </div>
       <div className="sort-by-container">
         <BsFilterRight className="sort-by-icon" />
-        <h1 className="sort-by">Sort by</h1>
+        <h1 className="sort-by">Sort By</h1>
         <select
           className="sort-by-select"
           value={activeOptionId}

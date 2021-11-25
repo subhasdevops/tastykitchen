@@ -1,18 +1,38 @@
 import {Component} from 'react'
 import {BiRupee} from 'react-icons/bi'
 import {AiFillStar} from 'react-icons/ai'
-import Counter from '../Counter'
+
 import './index.css'
 
 class RestaurentItem extends Component {
-  state = {click: true}
+  state = {quantity: 1}
 
   onGenerate = () => {
-    this.setState({click: false})
+    const {prdData, foodItem} = this.props
+    const {quantity} = this.state
+    const updatedFoodItem = {
+      cost: foodItem.cost,
+      foodType: foodItem.food_type,
+      id: foodItem.id,
+      imageUrl: foodItem.image_url,
+      name: foodItem.name,
+      rating: foodItem.rating,
+    }
+    prdData({...updatedFoodItem, quantity})
+  }
+
+  onIncrement = () => {
+    this.setState(prev => ({quantity: prev.quantity + 1}))
+  }
+
+  onDecrement = () => {
+    const {quantity} = this.state
+    if (quantity > 1) {
+      this.setState(prev => ({quantity: prev.quantity - 1}))
+    }
   }
 
   render() {
-    const {click} = this.state
     const {foodItem} = this.props
     const updatedFoodItem = {
       cost: foodItem.cost,
@@ -22,10 +42,10 @@ class RestaurentItem extends Component {
       name: foodItem.name,
       rating: foodItem.rating,
     }
-    localStorage.setItem('foodItem', JSON.stringify(updatedFoodItem))
+    const {quantity} = this.state
 
     return (
-      <li className="dish-container">
+      <li className="dish-container" testid="foodItem">
         <div>
           <img
             className="dish-img"
@@ -43,17 +63,31 @@ class RestaurentItem extends Component {
             <AiFillStar className="color" />
             <p>{updatedFoodItem.rating}</p>
           </div>
-          {click ? (
+
+          <div className="counter-card">
             <button
-              onClick={this.onGenerate}
-              className="button-el"
               type="button"
+              onClick={this.onDecrement}
+              testid="decrement-count"
+              className="count-inc"
             >
-              Add
+              -
             </button>
-          ) : (
-            <Counter />
-          )}
+            <div className="count-item" testid="active-count">
+              {quantity}
+            </div>
+            <button
+              type="button"
+              onClick={this.onIncrement}
+              testid="increment-count"
+              className="count-inc"
+            >
+              +
+            </button>
+          </div>
+          <button onClick={this.onGenerate} className="button-el" type="button">
+            Add
+          </button>
         </div>
       </li>
     )

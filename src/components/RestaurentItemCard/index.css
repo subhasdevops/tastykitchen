@@ -6,8 +6,8 @@
   margin: 10px;
 }
 .dish-img {
-  width: 150px;
-  height: 100px;
+  width: 160px;
+  height: 130px;
   border-radius: 5px;
 }
 .foodName-card {
@@ -16,13 +16,14 @@
 }
 .food-rating {
   font-size: 9px;
-  margin-left: 5px;
+  margin-left: 8px;
 }
 .button-el {
   background-color: white;
   color: #ffa412;
   border: 1px solid #ffa412;
   border-radius: 5px;
+  margin-top: 3px;
 }
 .color {
   color: #ffcc00;
@@ -33,4 +34,18 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+.counter-card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.count-item {
+  margin: 2px;
+}
+
+.count-inc {
+  width: 15px;
+  height: 15px;
+  font-size: 9px;
 }

@@ -2,8 +2,7 @@
   list-style: none;
   display: flex;
   margin: 10px;
-  min-width: 315px;
-  max-width: 360px;
+  width: 315px;
 }
 .link-style {
   color: black;
@@ -14,9 +13,17 @@
 }
 .thumbnail {
   width: 120px;
+  height: 120px;
   margin-right: 5px;
-  border-radius: 5px;
+  border-radius: 8px;
 }
+@media screen and (max-width: 576px) {
+  .thumbnail {
+    height: 100px;
+    width: 140px;
+  }
+}
+
 .col {
   color: #ffcc00;
   width: 10px;

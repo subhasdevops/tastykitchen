@@ -11,9 +11,9 @@ const ProductCard = props => {
   const {rating} = userRating
 
   return (
-    <Link to={`/restaurentDetails/${id}`} className="link-style">
-      <li className="product-item">
-        <img src={imageUrl} alt="product" className="thumbnail" />
+    <Link to={`/restaurant/${id}`} className="link-style">
+      <li className="product-item" testid="restaurant-item">
+        <img src={imageUrl} alt="restaurant" className="thumbnail" />
         <div>
           <h1 className="nameSize">{name}</h1>
           <p className="nameSize">{cuisine}</p>

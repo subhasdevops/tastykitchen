@@ -7,6 +7,12 @@ import './index.css'
 import Products from '../Products'
 import Footer from '../Footer'
 
+const getStoredData = JSON.parse(localStorage.getItem('cartData'))
+
+if (getStoredData === null) {
+  localStorage.setItem('cartData', JSON.stringify([]))
+}
+
 class Home extends Component {
   render() {
     const jwtToken = Cookies.get('jwt_token')
@@ -16,7 +22,7 @@ class Home extends Component {
 
     return (
       <>
-        <Header />
+        <Header tabH="tabCol" />
 
         <ReactSlider />
 

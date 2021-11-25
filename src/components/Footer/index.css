@@ -6,14 +6,19 @@
   background-color: #0f172a;
   color: white;
   padding: 10px;
+  width: 100vw;
 }
 .col {
   width: 30px;
   height: 30px;
   margin-right: 5px;
 }
-
-.tastyheading {
+.Footer-Contact {
+  text-align: center;
+  font-size: 17px;
+  width: 370px;
+}
+.tastyHeading {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,4 +27,8 @@
   display: flex;
   font-size: 30px;
   margin-bottom: 10px;
+}
+
+.icons-style {
+  margin: 5px;
 }

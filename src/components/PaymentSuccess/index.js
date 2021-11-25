@@ -12,7 +12,9 @@ const PaymentSuccess = () => (
         className="not-found-img"
       />
       <h1>Payment Successful</h1>
-      <p>Thank you for ordering Your payment is successfully completed.</p>
+      <p className="payment-success-order">
+        Thank you for ordering Your payment is successfully completed.
+      </p>
       <Link to="/">
         <button type="button" className="button-color">
           Go To Home Page

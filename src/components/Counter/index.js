@@ -3,7 +3,7 @@ import {Component} from 'react'
 import './index.css'
 
 class Counter extends Component {
-  state = {counter: 0}
+  state = {counter: 1}
 
   onIncrement = () => {
     this.setState(prev => ({counter: prev.counter + 1}))
@@ -11,9 +11,7 @@ class Counter extends Component {
 
   onDecrement = () => {
     const {counter} = this.state
-    if (counter <= 0) {
-      this.setState({counter: 0})
-    } else {
+    if (counter > 1) {
       this.setState(prev => ({counter: prev.counter - 1}))
     }
   }
@@ -26,11 +24,19 @@ class Counter extends Component {
 
     return (
       <div className="counter-card">
-        <button type="button" onClick={this.onDecrement}>
+        <button
+          type="button"
+          onClick={this.onDecrement}
+          testid="decrement-count"
+        >
           -
         </button>
         <div className="count-item">{parsedVal}</div>
-        <button type="button" onClick={this.onIncrement}>
+        <button
+          type="button"
+          onClick={this.onIncrement}
+          testid="increment-count"
+        >
           +
         </button>
       </div>

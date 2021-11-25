@@ -84,7 +84,6 @@ class LoginForm extends Component {
           className="username-input-field"
           value={username}
           onChange={this.onChangeUsername}
-          placeholder="lucifier"
         />
       </>
     )
@@ -110,18 +109,18 @@ class LoginForm extends Component {
             className="kitchen-mobile-image"
           />
           <h1 className="font-color">Tasty Kitchens</h1>
-          <h1>Sign in</h1>
+          <h1>Login</h1>
           <div className="input-container">{this.renderUsernameField()}</div>
           <div className="input-container">{this.renderPasswordField()}</div>
+          {showSubmitError && <p className="error-message">*{errorMsg}</p>}
           <button type="submit" className="login-button">
             Login
           </button>
-          {showSubmitError && <p className="error-message">*{errorMsg}</p>}
         </form>
         <img
           src="https://res.cloudinary.com/dzfehrv3n/image/upload/v1625912258/Rectangle_1456_ns8vck.png"
           className="login-website-logo-mobile-image"
-          alt="website logo"
+          alt="website login"
         />
       </div>
     )

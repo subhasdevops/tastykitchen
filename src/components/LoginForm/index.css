@@ -51,10 +51,15 @@
   width: 200px;
   background-color: #e2e8f0;
 }
+.error-message {
+  color: red;
+  font-size: 13px;
+  width: 200px;
+}
 .login-button {
   background-color: #f7931e;
-  width: 200px;
-  border-color: blue;
-  height: 25px;
+  width: 203px;
+  border-radius: 5px;
+  height: 29px;
   color: white;
 }

@@ -14,28 +14,28 @@ export default class ReactSlider extends Component {
           <div>
             <img
               className="pic"
-              alt="kit1"
+              alt="offer"
               src="https://assets.ccbp.in/frontend/react-js/restaurants-app-project/carousel-images-jammu-special.jpg"
             />
           </div>
           <div>
             <img
               className="pic"
-              alt="kit2"
+              alt="offer"
               src="https://assets.ccbp.in/frontend/react-js/restaurants-app-project/carousel-images-rajasthani-special.jpg"
             />
           </div>
           <div>
             <img
               className="pic"
-              alt="kit3"
+              alt="offer"
               src="https://assets.ccbp.in/frontend/react-js/restaurants-app-project/carousel-images-uttar-pradesh-special.jpg"
             />
           </div>
           <div>
             <img
               className="pic"
-              alt="kit4"
+              alt="offer"
               src="https://assets.ccbp.in/frontend/react-js/restaurants-app-project/carousel-images-north-indian-special.jpg"
             />
           </div>
